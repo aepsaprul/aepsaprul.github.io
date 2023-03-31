@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aep CV</title>
+  
+  <!-- tailwindcss -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- tailwindcss elements -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap"
+    rel="stylesheet" />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+
+  <script src="https://cdn.tailwindcss.com/3.2.4"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        fontFamily: {
+          sans: ["Roboto", "sans-serif"],
+          body: ["Roboto", "sans-serif"],
+          mono: ["ui-monospace", "monospace"],
+        },
+      },
+      corePlugins: {
+        preflight: false,
+      },
+    };
+  </script>
+
+</head>
+<body>
+  <!-- mobile -->
+  <div class="lg:flex lg:justify-center">
+    <div class="lg:w-3/4">
+      <!-- profile -->
+      <div class="p-3">
+        <div class="flex justify-center">
+          <img src="img/img.jpg" alt="profil" class="rounded-full w-36">
+        </div>
+        <div class="text-center font-semibold mt-3">Aep Saprul Mujahid</div>
+        <div class="text-center font-semibold mt-3">Programmer Web | Fullstack</div>
+        <div class="text-center font-light text-sm">aepsaprulmujahid@gmail.com</div>
+      </div>
+      <!-- portofolio -->
+      <div class="mt-10">
+        <div class="flex justify-center my-4">
+          <div class="font-medium text-xl text-center rounded-full border-b-2 border-emerald-500 w-32 pb-2">Portofolio</div>
+        </div>
+        <div>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-1 md:gap-5 m-1">
+            <div class="border rounded">
+              <a href="#"
+                data-te-toggle="modal"
+                data-te-target="#antrian"
+                data-te-ripple-init
+                data-te-ripple-color="light">
+                  <div class="h-36 md:h-56 flex items-center">
+                    <img src="img/antrian/ab_antrian_4.png" alt="antrian">
+                  </div>
+                  <div class="font-thin text-center text-sm mt-2">Antrian</div>
+              </a>
+            </div>
+            <div class="border rounded">
+              <a href="#"
+                data-te-toggle="modal"
+                data-te-target="#companyProfile"
+                data-te-ripple-init
+                data-te-ripple-color="light">
+                  <div class="h-36 md:h-56 flex items-center">
+                    <img src="img/company_profile/1.jpg" alt="company_profile">
+                  </div>
+                  <div class="font-thin text-center text-sm mt-2">Company Profile</div>
+              </a>
+            </div>
+            <div class="border rounded">
+              <a href="#"
+                data-te-toggle="modal"
+                data-te-target="#complaint"
+                data-te-ripple-init
+                data-te-ripple-color="light">
+                  <div class="h-36 md:h-56 flex items-center">
+                    <img src="img/complaint/1.png" alt="complaint">
+                  </div>
+                  <div class="font-thin text-center text-sm mt-2">Complaint</div>
+              </a>
+            </div>
+            <div class="border rounded">
+              <a href="#"
+                data-te-toggle="modal"
+                data-te-target="#espk"
+                data-te-ripple-init
+                data-te-ripple-color="light"
+              >
+                <div class="h-36 md:h-56 flex items-center">
+                  <img src="img/espk/2.png" alt="espk">
+                </div>
+                <div class="font-thin text-center text-sm mt-2">Espk</div>
+              </a>
+            </div>
+            <div class="border rounded">
+              <a href="#"
+                data-te-toggle="modal"
+                data-te-target="#hrd"
+                data-te-ripple-init
+                data-te-ripple-color="light"
+              >
+                <div class="h-36 md:h-56 flex items-center">
+                  <img src="img/hrd/3.png" alt="hrd">
+                </div>
+                <div class="font-thin text-center text-sm mt-2">HRD</div>
+              </a>
+            </div>
+            <div class="border rounded">
+              <a href="#"
+                data-te-toggle="modal"
+                data-te-target="#recruitment"
+                data-te-ripple-init
+                data-te-ripple-color="light"
+              >
+                <div class="h-36 md:h-56 flex items-center">
+                  <img src="img/recruitment/1.png" alt="recruitment">
+                </div>
+                <div class="font-thin text-center text-sm mt-2">Recruitment</div>
+              </a>
+            </div>
+            <div class="border rounded">
+              <a href="#"
+                data-te-toggle="modal"
+                data-te-target="#ritel"
+                data-te-ripple-init
+                data-te-ripple-color="light"
+              >
+                <div class="h-36 md:h-56 flex items-center">
+                  <img src="img/ritel/wm_pos_6.png" alt="ritel">
+                </div>
+                <div class="font-thin text-center text-sm mt-2">POS/Ritel</div>
+              </a>
+            </div>
+            <div class="border rounded">
+              <a href="#"
+                data-te-toggle="modal"
+                data-te-target="#order"
+                data-te-ripple-init
+                data-te-ripple-color="light"
+              >
+                <div class="h-36 md:h-56 flex items-center">
+                  <img src="img/web_order/8.png" alt="web_order">
+                </div>
+                <div class="font-thin text-center text-sm mt-2">Web Order</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- tentang -->
+      <div class="pt-5">
+        <div class="flex justify-center my-4">
+          <div class="font-medium text-xl text-center rounded-full border-b-2 border-emerald-500 w-32 pb-2">Tentang</div>
+        </div>
+        <div>
+          <p class="text-sm sm:text-base md:text-lg m-2">
+            Halo! Nama Saya Aep Saprul Mujahid seorang web programmer sejak tahun 2014.
+          </p>
+          <p class="text-sm sm:text-base md:text-lg m-2" style="text-align: justify; text-indent: 50px">
+            Sebagai seorang programmer web fullstack, saya memiliki pengetahuan dan pengalaman yang luas dalam pengembangan aplikasi web dari sisi frontend dan backend. Saya memiliki kemampuan untuk merancang tampilan website atau aplikasi dengan menggunakan HTML, CSS, dan JavaScript
+          </p>
+          <p class="text-sm sm:text-base md:text-lg m-2" style="text-align: justify; text-indent: 50px">
+            Selain itu, saya juga mampu mengembangkan sisi backend dari aplikasi web dengan bahasa pemrograman PHP menggunakan framework Laravel. Saya dapat membuat dan menghubungkan database, mengimplementasikan logika bisnis, serta mengatur penggunaan sumber daya server.
+          </p>
+          <p class="text-sm sm:text-base md:text-lg m-2" style="text-align: justify; text-indent: 50px">
+            Saya memiliki kemampuan untuk bekerja dalam tim, berkomunikasi dengan baik, serta memiliki sikap yang terbuka terhadap umpan balik dan kritik. Saya juga selalu berusaha untuk terus belajar dan mengembangkan pengetahuan saya tentang teknologi terbaru dan praktik terbaik dalam pengembangan aplikasi web.
+          </p>
+          <p class="text-sm sm:text-base md:text-lg m-2" style="text-align: justify; text-indent: 50px">
+            Saya yakin bahwa kemampuan dan pengalaman saya dalam mengembangkan aplikasi web secara fullstack dapat membantu client dalam mencapai tujuan bisnis mereka. Saya siap untuk berkontribusi dalam tim dan memberikan kinerja terbaik saya untuk mendukung kesuksesan client.
+          </p>
+        </div>
+      </div>
+      <!-- kontak -->
+      <div class="pt-5">
+        <div class="flex justify-center my-4">
+          <div class="font-medium text-xl text-center rounded-full border-b-2 border-emerald-500 w-32 pb-2">Kontak</div>
+        </div>
+        <div class="m-2 flex justify-center">
+          <div class="grid grid-cols-4 gap-3 p-5 w-1/3">
+            <a href="https://github.com/aepsaprul"><img src="img/github.png" alt="github"></a>
+            <a href="https://www.linkedin.com/in/aep-saprul-mujahid-734782a7/"><img src="img/linkedin.png" alt="linkedin"></a>
+            <a href="https://wa.me/6281337667055"><img src="img/whatsapp.png" alt="whatsapp"></a>
+            <a href="https://t.me/Aepsemprul"><img src="img/telegram.png" alt="telegram"></a>
+          </div>
+        </div>
+      </div>
+      <div class="mt-20">
+        <div class="text-xs text-slate-500 text-center">
+          <a href="https://www.flaticon.com/free-icons/telegram" title="telegram icons">Telegram icons created by Ruslan Babkin - Flaticon</a> |
+          <a href="https://www.flaticon.com/free-icons/whatsapp" title="whatsapp icons">Whatsapp icons created by Ruslan Babkin - Flaticon</a> |
+          <a href="https://www.flaticon.com/free-icons/github" title="github icons">Github icons created by Ruslan Babkin - Flaticon</a> |
+          <a href="https://www.flaticon.com/free-icons/linkedin" title="linkedin icons">Linkedin icons created by Ruslan Babkin - Flaticon</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal antrian -->
+  <div
+    data-te-modal-init
+    class="fixed top-0 left-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
+    id="antrian"
+    tabindex="-1"
+    aria-labelledby="antrianLabel"
+    aria-modal="true"
+    role="dialog">
+    <div
+      data-te-modal-dialog-ref
+      class="pointer-events-none relative w-auto translate-y-[-50px] opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:max-w-[500px] min-[992px]:max-w-[800px] min-[1200px]:max-w-[1140px]">
+      <div
+        class="pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none dark:bg-neutral-600">
+        <div
+          class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50">
+          <h5
+            class="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200"
+            id="antrianLabel">
+            Aplikasi Antrian
+          </h5>
+          <button
+            type="button"
+            class="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+            data-te-modal-dismiss
+            aria-label="Close">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-6 w-6">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="relative p-4">
+          <div>
+            <p class="indent-20 text-justify mb-5">
+              Aplikasi antrian bertujuan untuk mempermudah proses pengantri di suatu tempat atau layanan. Aplikasi ini akan memungkinkan pengguna untuk mendaftar dan memilih jenis layanan yang ingin diakses.
+            </p>
+            <p>
+              Beberapa fitur dalam aplikasi antrian antara lain:
+              <ul>
+                <li>- Pengguna mencetak nomor antrian secara mandiri</li>
+                <li>- Panggilan suara</li>
+                <li>- Monitoring Antrian</li>
+                <li>- Laporan pengunjung</li>
+              </ul>
+            </p>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mt-5">
+            <div class="border p-2">
+              <img src="img/antrian/ab_antrian_1.png" alt="">
+              <div class="text-center">Form Login</div>
+            </div>
+            <div class="border p-2">
+              <img src="img/antrian/ab_antrian_2.png" alt="">
+              <div class="text-center">Dashboard</div>
+            </div>
+            <div class="border p-2">
+              <img src="img/antrian/ab_antrian_3.png" alt="">
+              <div class="text-center">Form Customer</div>
+            </div>
+            <div class="border p-2">
+              <img src="img/antrian/ab_antrian_4.png" alt="">
+              <div class="text-center">Monitoring Antrian</div>
+            </div>
+            <div class="border p-2">
+              <img src="img/antrian/ab_antrian_5.png" alt="">
+              <div class="text-center">Customer Panggil</div>
+            </div>
+            <div class="border p-2">
+              <img src="img/antrian/ab_antrian_6.jpeg" alt="">
+              <div class="text-center">Nomor Antrian</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal company profile -->
+  <div
+    data-te-modal-init
+    class="fixed top-0 left-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
+    id="companyProfile"
+    tabindex="-1"
+    aria-labelledby="companyProfileLabel"
+    aria-modal="true"
+    role="dialog">
+    <div
+      data-te-modal-dialog-ref
+      class="pointer-events-none relative w-auto translate-y-[-50px] opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:max-w-[500px] min-[992px]:max-w-[800px] min-[1200px]:max-w-[1140px]">
+      <div
+        class="pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none dark:bg-neutral-600">
+        <div
+          class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50">
+          <h5
+            class="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200"
+            id="companyProfileLabel">
+              Company Profile
+          </h5>
+          <button
+            type="button"
+            class="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+            data-te-modal-dismiss
+            aria-label="Close">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-6 w-6">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="relative p-4">
+          <p class="indent-20 text-justify">
+            Website company profile bertujuan untuk memperkenalkan sebuah perusahaan atau organisasi secara online. Website ini akan berisi informasi tentang sejarah, visi dan misi, produk atau layanan yang ditawarkan, dan prestasi perusahaan.
+          </p>
+          <p>
+            Beberapa fitur dalam website company profile antara lain:
+            <ul>
+              <li>
+                - Tentang perusahaan: Halaman ini akan berisi informasi tentang sejarah dan profil perusahaan, visi dan misi, nilai-nilai yang dipegang, serta penghargaan dan sertifikasi yang pernah diraih.
+              </li>
+              <li>
+                - Produk dan layanan: Halaman ini akan berisi informasi lengkap tentang produk atau layanan yang ditawarkan oleh perusahaan, termasuk spesifikasi produk dan harga.
+              </li>
+              <li>
+                - Kontak dan lokasi: Halaman ini akan menyediakan informasi kontak perusahaan seperti nomor telepon, email, dan alamat kantor.
+              </li>
+            </ul>
+            Dengan adanya website company profile ini, diharapkan perusahaan dapat lebih mudah memperkenalkan diri dan meningkatkan brand awareness. Selain itu, website ini juga dapat meningkatkan kredibilitas perusahaan di mata calon pelanggan dan investor.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mt-5">
+            <div class="border p-2">
+              <img src="img/company_profile/1.jpg" alt="">
+              <div class="text-center">Tentang</div>
+            </div>
+            <div class="border p-2">
+              <img src="img/company_profile/2.jpg" alt="">
+              <div class="text-center">Layanan</div>
+            </div>
+            <div class="border p-2">
+              <img src="img/company_profile/3.jpg" alt="">
+              <div class="text-center">Cabang</div>
+            </div>
+            <div class="border p-2">
+              <img src="img/company_profile/4.jpg" alt="">
+              <div class="text-center">Produk</div>
+            </div>
+            <div class="border p-2">
+              <img src="img/company_profile/5.png" alt="">
+              <div class="text-center">Blog</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal complaint -->
+  <div
+    data-te-modal-init
+    class="fixed top-0 left-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
+    id="complaint"
+    tabindex="-1"
+    aria-labelledby="complaintLabel"
+    aria-modal="true"
+    role="dialog">
+    <div
+      data-te-modal-dialog-ref
+      class="pointer-events-none relative w-auto translate-y-[-50px] opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:max-w-[500px] min-[992px]:max-w-[800px] min-[1200px]:max-w-[1140px]">
+      <div
+        class="pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none dark:bg-neutral-600">
+        <div
+          class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50">
+          <h5
+            class="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200"
+            id="complaintLabel">
+            Web Kritik dan Saran / Complaint
+          </h5>
+          <button
+            type="button"
+            class="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+            data-te-modal-dismiss
+            aria-label="Close">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-6 w-6">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="relative p-4">
+          <div>
+            <p class="indent-20">
+              Website complaint bertujuan untuk memudahkan pelanggan dalam menyampaikan keluhan atau masalah terkait produk atau layanan suatu perusahaan. Website ini akan menyediakan platform bagi pelanggan untuk mengirimkan keluhan secara online dan akan mempermudah perusahaan dalam memproses dan menindaklanjuti keluhan tersebut.
+            </p>
+            <p>
+              Beberapa fitur dalam website complaint antara lain:
+              <ul>
+                <li>
+                  - <b>Formulir keluhan</b>: Halaman ini akan berisi formulir yang dapat diisi oleh pelanggan untuk menyampaikan keluhan atau masalah yang dialami. Formulir ini akan mencakup informasi seperti nama pelanggan, nomor telepon, email, dan deskripsi masalah.
+                </li>
+                <li>
+                  - <b>Database keluhan</b> Perusahaan dapat mengelola dan melacak semua keluhan yang masuk dan melakukan analisis data untuk memperbaiki produk atau layanan mereka.
+                </li>
+              </ul>
+              Dengan adanya website complaint ini, diharapkan pelanggan dapat lebih mudah menyampaikan keluhan dan perusahaan dapat lebih cepat menindaklanjuti keluhan tersebut. Selain itu, perusahaan juga dapat meningkatkan kepuasan pelanggan dan meningkatkan reputasi mereka di mata publik dengan menangani keluhan dengan baik.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mt-5">
+            <div class="border p-2">
+              <img src="img/complaint/1.png" alt="">
+              <div class="text-center">nama</div>
+            </div>
+            <div class="border p-2">
+              <img src="img/complaint/2.png" alt="">
+              <div class="text-center">nama</div>
+            </div>
+            <div class="border p-2">
+              <img src="img/complaint/3.png" alt="">
+              <div class="text-center">nama</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal espk -->
+  <div
+    data-te-modal-init
+    class="fixed top-0 left-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
+    id="espk"
+    tabindex="-1"
+    aria-labelledby="espkLabel"
+    aria-modal="true"
+    role="dialog">
+    <div
+      data-te-modal-dialog-ref
+      class="pointer-events-none relative w-auto translate-y-[-50px] opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:max-w-[500px] min-[992px]:max-w-[800px] min-[1200px]:max-w-[1140px]">
+      <div
+        class="pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none dark:bg-neutral-600">
+        <div
+          class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50">
+          <h5
+            class="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200"
+            id="espkLabel">
+            Aplikasi E-SPK (Surat Perintah Kerja)
+          </h5>
+          <button
+            type="button"
+            class="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+            data-te-modal-dismiss
+            aria-label="Close">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-6 w-6">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="relative p-4">
+          <div>
+            <p class="indent-20">
+              Espk bertujuan untuk mempermudah proses pembuatan dan manajemen surat perintah kerja secara digital.
+            </p>
+            <p>
+              Beberapa fitur dalam aplikasi espk:
+              <ul>
+                <li>- Pembuatan surat perintah kerja secara online dengan format yang telah ditentukan</li>
+                <li>- Manajemen surat perintah kerja yang telah dibuat, termasuk pencarian, pengeditan, dan penghapusan data.</li>
+                <li>- Pelacakan status pekerjaan yang dilakukan sesuai dengan surat perintah kerja.</li>
+                <li>- Pelacakan status pekerjaan yang dilakukan sesuai dengan surat perintah kerja.</li>
+                <li>- Laporan pelaksanaan pekerjaan berdasarkan surat perintah kerja.</li>
+              </ul>
+            </p>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mt-5">
+            <div class="border p-2">
+              <img src="img/espk/1.png" alt="">
+              <div class="text-center">Form Login</div>
+            </div>
+            <div class="border p-2">
+              <img src="img/espk/2.png" alt="">
+              <div class="text-center">Dashboard</div>
+            </div>
+            <div class="border p-2">
+              <img src="img/espk/3.png" alt="">
+              <div class="text-center">Data SPK</div>
+            </div>
+            <div class="border p-2">
+              <img src="img/espk/4.PNG" alt="">
+              <div class="text-center">Update Status</div>
+            </div>
+            <div class="border p-2">
+              <img src="img/espk/5.png" alt="">
+              <div class="text-center">Input Data</div>
+            </div>
+            <div class="border p-2">
+              <img src="img/espk/6.png" alt="">
+              <div class="text-center">Laporan</div>
+            </div>
+            <div class="border p-2">
+              <img src="img/espk/7.png" alt="">
+              <div class="text-center">SPK Jadi</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal hrd -->
+  <div
+    data-te-modal-init
+    class="fixed top-0 left-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
+    id="hrd"
+    tabindex="-1"
+    aria-labelledby="hrdLabel"
+    aria-modal="true"
+    role="dialog">
+    <div
+      data-te-modal-dialog-ref
+      class="pointer-events-none relative w-auto translate-y-[-50px] opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:max-w-[500px] min-[992px]:max-w-[800px] min-[1200px]:max-w-[1140px]">
+      <div
+        class="pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none dark:bg-neutral-600">
+        <div
+          class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50">
+          <h5
+            class="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200"
+            id="hrdLabel">
+            Aplikasi HRD
+          </h5>
+          <button
+            type="button"
+            class="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+            data-te-modal-dismiss
+            aria-label="Close">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-6 w-6">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="relative p-4">
+          <div>
+            <p class="indent-20">
+              Aplikasi HRD bertujuan untuk memudahkan manajemen HRD dalam melaksanakan kegiatan-kegiatan operasionalnya dan memberikan kemudahan akses informasi bagi karyawan dalam hal pengembangan karir dan manajemen sumber daya manusia.
+            </p>
+            <p>
+              Beberapa fitur dalam aplikasi HRD antara lain:
+              <ul>
+                <li>
+                  - Job vacancy dan rekrutmen: Fitur ini memungkinkan perusahaan untuk mempublikasikan lowongan pekerjaan yang tersedia dan menerima aplikasi secara online. Hal ini akan memudahkan pelamar dalam mencari informasi lowongan pekerjaan yang tersedia dan memudahkan HRD dalam memproses aplikasi.
+                </li>
+                <li>
+                  - Training dan development: Fitur ini memungkinkan HRD untuk menyediakan informasi tentang pelatihan dan pengembangan yang tersedia untuk karyawan
+                </li>
+                <li>
+                  - Manajemen data karyawan: apilikasi HRD dapat memiliki database yang memuat informasi tentang karyawan seperti nama, alamat, posisi, gaji, absensi, dan sebagainya. 
+                </li>
+                <li>
+                  - Manajemen data karyawan: Website HRD dapat memiliki database yang memuat informasi tentang karyawan seperti nama, alamat, posisi, gaji, absensi, dan sebagainya. 
+                </li>
+                <li>
+                  - Cuti & Resign: Cuti & Resign sudah disertakan dengan fitur approval, apabila karyawan melakukan cuti / resign secara otomatis hanya atasannya yang bisa menyetujui atau menolaknya.
+                </li>
+              </ul>
+            </p>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mt-5">
+            <div class="border p-2">
+              <img src="img/hrd/1.png" alt="">
+              <div class="text-center">Form Login</div>
+            </div>
+            <div class="border p-2">
+              <img src="img/hrd/2.png" alt="">
+              <div class="text-center">Dashboard</div>
+            </div>
+            <div class="border p-2">
+              <img src="img/hrd/3.png" alt="">
+              <div class="text-center">Data Karyawan</div>
+            </div>
+            <div class="border p-2">
+              <img src="img/hrd/4.png" alt="">
+              <div class="text-center">Data Cuti</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal recruitment -->
+  <div
+    data-te-modal-init
+    class="fixed top-0 left-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
+    id="recruitment"
+    tabindex="-1"
+    aria-labelledby="recruitmentLabel"
+    aria-modal="true"
+    role="dialog">
+    <div
+      data-te-modal-dialog-ref
+      class="pointer-events-none relative w-auto translate-y-[-50px] opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:max-w-[500px] min-[992px]:max-w-[800px] min-[1200px]:max-w-[1140px]">
+      <div
+        class="pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none dark:bg-neutral-600">
+        <div
+          class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50">
+          <h5
+            class="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200"
+            id="recruitmentLabel">
+            Aplikasi Recruitment
+          </h5>
+          <button
+            type="button"
+            class="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+            data-te-modal-dismiss
+            aria-label="Close">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-6 w-6">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="relative p-4">
+          <div>
+            <p class="indent-20">
+              Aplikasi Recruitment membantu perusahaan untuk memudahkan proses perekrutan karyawan baru. Aplikasi rekrutmen dapat membantu perusahaan untuk mencari dan menyeleksi kandidat potensial dengan lebih efisien dan efektif.
+            </p>
+            <p>
+              Beberap fitur dalam aplikasi recruitment yaitu:
+              <ul>
+                <li>
+                  - Pendaftaran akun kandidat - Kandidat dapat membuat akun dan mengisi informasi pribadi serta riwayat pekerjaan mereka.
+                </li>
+                <li>
+                  - Pencarian lowongan pekerjaan - Kandidat dapat mencari lowongan pekerjaan yang sesuai dengan kualifikasi mereka.
+                </li>
+                <li>
+                  - Lamaran pekerjaan online - Kandidat dapat mengirimkan lamaran pekerjaan mereka secara online melalui platform tersebut.
+                </li>
+              </ul>
+            </p>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mt-5">
+            <div class="border p-2">
+              <img src="img/recruitment/1.png" alt="">
+              <div class="text-center">Halaman Utama</div>
+            </div>
+            <div class="border p-2">
+              <img src="img/recruitment/2.png" alt="">
+              <div class="text-center">Biodata Pelamar</div>
+            </div>
+            <div class="border p-2">
+              <img src="img/recruitment/3.png" alt="">
+              <div class="text-center">Halaman Kirim Lamaran</div>
+            </div>
+            <div class="border p-2">
+              <img src="img/recruitment/4.png" alt="">
+              <div class="text-center">Data Pelamar</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal ritel -->
+  <div
+    data-te-modal-init
+    class="fixed top-0 left-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
+    id="ritel"
+    tabindex="-1"
+    aria-labelledby="ritelLabel"
+    aria-modal="true"
+    role="dialog">
+    <div
+      data-te-modal-dialog-ref
+      class="pointer-events-none relative w-auto translate-y-[-50px] opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:max-w-[500px] min-[992px]:max-w-[800px] min-[1200px]:max-w-[1140px]">
+      <div
+        class="pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none dark:bg-neutral-600">
+        <div
+          class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50">
+          <h5
+            class="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200"
+            id="ritelLabel">
+            Aplikasi Ritel
+          </h5>
+          <button
+            type="button"
+            class="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+            data-te-modal-dismiss
+            aria-label="Close">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-6 w-6">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="relative p-4">
+          <div>
+            <p class="indent-20">
+              Aplikasi Ritel membantu perusahaan untuk mengelola semua produknya serta berinteraksi dengan toko - toko yang sudah bekerja sama.
+            </p>
+            <p>
+              Beberapa fitur dalam aplikasi ritel yaitu:
+              <ul>
+                <li>
+                  - Manajemen Gudang: Semua toko akan mengambil produknya dari gudang yang sudah ditentukan, semua transaksinya tercatat dalam aplikasi.
+                </li>
+                <li>
+                  - Manajemen Stok: semua stok gudang maupun stok yang ada disemua toko diolah oleh aplikasi.
+                </li>
+                <li>
+                  - Belanja: setiap toko bisa langsung membuat pesanan melalui aplikasi, kemudian bagian gudang akan menerima pesenan dan memprosesnya langsung.
+                </li>
+                <li>
+                  - Responsive: dengan aplikasi yang responsive pengguna tidak perlu harus punya PC Desktop atau Laptop, karena bisa diakses melalui Smartphone.
+                </li>
+              </ul>
+            </p>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mt-5">
+            <div class="border p-2">
+              <img src="img/ritel/wm_pos_1.png" alt="">
+              <div class="text-center">Form Login</div>
+            </div>
+            <div class="border p-2">
+              <img src="img/ritel/wm_pos_2.png" alt="">
+              <div class="text-center">Dashboard</div>
+            </div>
+            <div class="border p-2">
+              <img src="img/ritel/wm_pos_3.png" alt="">
+              <div class="text-center">Kasir Gudang</div>
+            </div>
+            <div class="border p-2">
+              <img src="img/ritel/wm_pos_4.png" alt="">
+              <div class="text-center">Invoice</div>
+            </div>
+            <div class="border p-2">
+              <img src="img/ritel/wm_pos_5.png" alt="">
+              <div class="text-center">Kasih Toko</div>
+            </div>
+            <div class="border p-2">
+              <img src="img/ritel/wm_pos_6.png" alt="">
+              <div class="text-center">Halaman Belanja</div>
+            </div>
+            <div class="border p-2">
+              <img src="img/ritel/wm_pos_7.png" alt="">
+              <div class="text-center">Laporan</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal order -->
+  <div
+    data-te-modal-init
+    class="fixed top-0 left-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
+    id="order"
+    tabindex="-1"
+    aria-labelledby="orderLabel"
+    aria-modal="true"
+    role="dialog">
+    <div
+      data-te-modal-dialog-ref
+      class="pointer-events-none relative w-auto translate-y-[-50px] opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:max-w-[500px] min-[992px]:max-w-[800px] min-[1200px]:max-w-[1140px]">
+      <div
+        class="pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none dark:bg-neutral-600">
+        <div
+          class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50">
+          <h5
+            class="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200"
+            id="orderLabel">
+            Web Order
+          </h5>
+          <button
+            type="button"
+            class="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+            data-te-modal-dismiss
+            aria-label="Close">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-6 w-6">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="relative p-4">
+          <div>
+            <p class="indent-20">
+              Web Order bertujuan untuk memudahkan pelanggan dalam melakukan pemesanan produk atau jasa secara online.
+            </p>
+            <p>
+              Beberap fitur web order:
+              <ul>
+                <li>
+                  - Sistem Keranjang yang memungkinkan pelanggan untuk memilih beberapa produk atau jasa.
+                </li>
+                <li>
+                  - Sistem Checkout yang mudah dan nyaman, termasuk metode pengiriman yang sudah integrasi dengan API rajaongkir.
+                </li>
+                <li>
+                  - Tracking pesanan agar pelanggan bisa melihat rincian proses pesanannya.
+                </li>
+                <li>
+                  - Laporan dan analisis yang memungkinkan pemilik website untuk memantau kinerja bisnis dan mengambil keputusan yang lebih baik.
+                </li>
+              </ul>
+            </p>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mt-5">
+            <div class="border p-2">
+              <img src="img/web_order/1.png" alt="">
+              <div class="text-center">Beranda</div>
+            </div>
+            <div class="border p-2">
+              <img src="img/web_order/2.png" alt="">
+              <div class="text-center">Login</div>
+            </div>
+            <div class="border p-2">
+              <img src="img/web_order/3.png" alt="">
+              <div class="text-center">Register</div>
+            </div>
+            <div class="border p-2">
+              <img src="img/web_order/4.png" alt="">
+              <div class="text-center">Detail Produk</div>
+            </div>
+            <div class="border p-2">
+              <img src="img/web_order/5.png" alt="">
+              <div class="text-center">Keranjang</div>
+            </div>
+            <div class="border p-2">
+              <img src="img/web_order/6.png" alt="">
+              <div class="text-center">Checkout</div>
+            </div>
+            <div class="border p-2">
+              <img src="img/web_order/7.png" alt="">
+              <div class="text-center">Invoice</div>
+            </div>
+            <div class="border p-2">
+              <img src="img/web_order/8.png" alt="">
+              <div class="text-center">Transaksi</div>
+            </div>
+            <div class="border p-2">
+              <img src="img/web_order/9.png" alt="">
+              <div class="text-center">Ulasan</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+</body>
+</html>
