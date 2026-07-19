@@ -1,668 +1,798 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth"> <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aep Saprul Mujahid | Web Developer Portfolio</title>
-  
+<html lang="id">
+<head>
+  <!-- =========================================================
+    SEO & META
+  ========================================================== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Curriculum Vitae Aep Saprul Mujahid, Full Stack Developer berpengalaman membangun aplikasi web modern, scalable, dan berorientasi bisnis." />
+  <meta name="theme-color" content="#2563eb" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Aep Saprul Mujahid — Full Stack Developer" />
+  <meta property="og:description" content="CV online Full Stack Developer — Laravel, Node.js, Vue.js, TypeScript, PostgreSQL, Docker, dan Cloud." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://placehold.co/1200x630/eff6ff/2563eb?text=Andi+Pratama+-+Full+Stack+Developer" />
+  <meta property="og:url" content="https://portfolio-anda.com" />
+
+  <!-- Favicon Dummy -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%232563eb'/%3E%3Ctext x='50' y='65' text-anchor='middle' font-size='54' font-family='Arial' font-weight='bold' fill='white'%3EAP%3C/text%3E%3C/svg%3E" />
+
+  <title>Aep Saprul Mujahid — Full Stack Developer | CV</title>
+
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" />
-
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
+  <!-- Tailwind Configuration -->
   <script>
     tailwind.config = {
       theme: {
-        extend: { // Menggunakan extend agar tidak menimpa font default Tailwind
-          fontFamily: {
-            sans: ["Inter", "sans-serif"],
+        extend: {
+          colors: {
+            brand: {
+              50: "#eff6ff",
+              100: "#dbeafe",
+              200: "#bfdbfe",
+              500: "#3b82f6",
+              600: "#2563eb",
+              700: "#1d4ed8",
+              900: "#1e3a8a"
+            }
           },
-        },
-      },
-      corePlugins: {
-        preflight: true, // Sebaiknya diaktifkan untuk konsistensi cross-browser
-      },
+          boxShadow: {
+            soft: "0 10px 30px rgba(15, 23, 42, 0.06)",
+            card: "0 4px 20px rgba(15, 23, 42, 0.05)"
+          }
+        }
+      }
     };
   </script>
 
   <style>
-    /* Custom style untuk gradient text */
-    .text-gradient {
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
+    /* =========================================================
+      BASE STYLE & ANIMATION
+    ========================================================== */
+    :root {
+      --brand: #2563eb;
+      --ink: #0f172a;
+      --muted: #64748b;
+      --border: #e2e8f0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: #f8fafc;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1.125rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #0f172a;
+      margin-bottom: 1.25rem;
+    }
+
+    .section-title::before {
+      content: "";
+      width: 0.35rem;
+      height: 1.5rem;
+      border-radius: 999px;
+      background: var(--brand);
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(22px);
+      animation: fadeUp 0.7s ease forwards;
+    }
+
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 0.8s ease forwards;
+    }
+
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+    .delay-4 { animation-delay: 0.4s; }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    .hover-lift {
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .hover-lift:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 35px rgba(15, 23, 42, 0.10);
+      border-color: #bfdbfe;
+    }
+
+    .project-preview {
+      background:
+        linear-gradient(135deg, rgba(37, 99, 235, 0.97), rgba(30, 64, 175, 0.92)),
+        linear-gradient(45deg, #1e40af, #3b82f6);
+    }
+
+    .project-grid-pattern {
+      background-image:
+        linear-gradient(rgba(255,255,255,.13) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.13) 1px, transparent 1px);
+      background-size: 22px 22px;
+    }
+
+    /* =========================================================
+      PRINT MODE — A4 PDF
+    ========================================================== */
+    @page {
+      size: A4;
+      margin: 10mm;
+    }
+
+    @media print {
+      html, body {
+        width: 210mm;
+        min-height: auto;
+        background: #ffffff !important;
+        font-size: 10.5pt;
+      }
+
+      body {
+        color: #0f172a !important;
+      }
+
+      .no-print,
+      .print-hidden {
+        display: none !important;
+      }
+
+      .print-container {
+        max-width: none !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+
+      .print-card,
+      .bg-white,
+      .rounded-2xl,
+      .rounded-xl {
+        box-shadow: none !important;
+      }
+
+      .print-card {
+        border-color: #cbd5e1 !important;
+      }
+
+      .hover-lift:hover {
+        transform: none !important;
+        box-shadow: none !important;
+      }
+
+      .fade-up,
+      .fade-in {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+      }
+
+      section,
+      article,
+      .avoid-break {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .project-card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      a {
+        color: inherit !important;
+        text-decoration: none !important;
+      }
+
+      .print-two-column {
+        grid-template-columns: 1fr 1fr !important;
+      }
+
+      .print-projects {
+        grid-template-columns: 1fr 1fr !important;
+      }
+
+      .project-preview {
+        min-height: 95px !important;
+      }
+
+      footer {
+        margin-top: 1rem !important;
+      }
     }
   </style>
-
 </head>
-<body class="bg-slate-900 text-slate-300 font-sans antialiased">
 
-  <div class="container mx-auto max-w-5xl px-6 py-12">
+<body>
+  <!-- =========================================================
+    TOP ACTION BAR
+  ========================================================== -->
+  <div class="no-print sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+      <a href="#top" class="flex items-center gap-2 text-sm font-bold text-slate-900" aria-label="Kembali ke bagian atas CV">
+        <!-- <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-600 text-white">AP</span> -->
+        <span class="hidden sm:inline">Curriculum Vitae</span>
+      </a>
 
-    <section id="profile" class="text-center mb-24">
-      <img src="img/img.jpg" alt="profil" class="rounded-full w-40 h-40 mx-auto mb-6 border-4 border-slate-700 shadow-lg">
-      <h1 class="text-4xl md:text-6xl font-black text-white mb-2 bg-gradient-to-r from-emerald-400 to-cyan-400 text-gradient">
-        Aep Saprul Mujahid
-      </h1>
-      <p class="text-xl md:text-2xl font-semibold text-emerald-400 mb-4">Web & Mobile Developer</p>
-      <p class="text-md text-slate-400">aepsaprul18@gmail.com</p>
-    </section>
-
-    <section id="portfolio" class="mb-24">
-      <div class="text-center mb-12" data-aos="fade-up">
-        <h2 class="text-3xl font-bold text-white">Portofolio</h2>
-        <div class="h-1 w-24 bg-emerald-500 mx-auto mt-2 rounded-full"></div>
-      </div>
-      
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-        
-        <div class="group relative overflow-hidden rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="100">
-          <a href="#" data-te-toggle="modal" data-te-target="#antrian" data-te-ripple-init data-te-ripple-color="light">
-            <img src="img/antrian/ab_antrian_4.png" alt="antrian" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
-            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <p class="text-white font-bold text-lg">Aplikasi Antrian</p>
-            </div>
-          </a>
-        </div>
-        
-        <div class="group relative overflow-hidden rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
-          <a href="#" data-te-toggle="modal" data-te-target="#companyProfile" data-te-ripple-init data-te-ripple-color="light">
-            <img src="img/company_profile/1.jpg" alt="company_profile" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
-            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <p class="text-white font-bold text-lg">Company Profile</p>
-            </div>
-          </a>
-        </div>
-
-        <div class="group relative overflow-hidden rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="300">
-          <a href="#" data-te-toggle="modal" data-te-target="#complaint" data-te-ripple-init data-te-ripple-color="light">
-            <img src="img/complaint/ab_complaint_1.png" alt="complaint" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
-            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <p class="text-white font-bold text-lg">Complaint System</p>
-            </div>
-          </a>
-        </div>
-        
-        <div class="group relative overflow-hidden rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="400">
-          <a href="#" data-te-toggle="modal" data-te-target="#espk" data-te-ripple-init data-te-ripple-color="light">
-            <img src="img/espk/2.png" alt="espk" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
-            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <p class="text-white font-bold text-lg">E-SPK</p>
-            </div>
-          </a>
-        </div>
-
-        <div class="group relative overflow-hidden rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="100">
-          <a href="#" data-te-toggle="modal" data-te-target="#hris" data-te-ripple-init data-te-ripple-color="light">
-            <img src="img/hris/3.png" alt="hris" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
-            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <p class="text-white font-bold text-lg">Aplikasi HRIS</p>
-            </div>
-          </a>
-        </div>
-        
-        <div class="group relative overflow-hidden rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
-          <a href="#" data-te-toggle="modal" data-te-target="#recruitment" data-te-ripple-init data-te-ripple-color="light">
-            <img src="img/recruitment/1.png" alt="recruitment" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
-            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <p class="text-white font-bold text-lg">Recruitment</p>
-            </div>
-          </a>
-        </div>
-
-        <div class="group relative overflow-hidden rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="300">
-          <a href="#" data-te-toggle="modal" data-te-target="#ritel" data-te-ripple-init data-te-ripple-color="light">
-            <img src="img/ritel/wm_pos_6.png" alt="ritel" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
-            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <p class="text-white font-bold text-lg">POS/Ritel</p>
-            </div>
-          </a>
-        </div>
-
-        <div class="group relative overflow-hidden rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="400">
-          <a href="#" data-te-toggle="modal" data-te-target="#order" data-te-ripple-init data-te-ripple-color="light">
-            <img src="img/web_order/8.png" alt="web_order" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
-            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <p class="text-white font-bold text-lg">Web Order</p>
-            </div>
-          </a>
-        </div>
-        
-      </div>
-    </section>
-
-    <section id="about" class="mb-24">
-      <div class="text-center mb-12" data-aos="fade-up">
-        <h2 class="text-3xl font-bold text-white">Tentang Saya</h2>
-        <div class="h-1 w-24 bg-emerald-500 mx-auto mt-2 rounded-full"></div>
-      </div>
-      
-      <div class="bg-slate-800 p-8 rounded-lg shadow-lg space-y-4 text-slate-400 text-base md:text-lg leading-relaxed" data-aos="fade-up">
-        <p>
-          Saya <span class="text-white font-semibold">Aep Saprul Mujahid</span>, seorang <span class="text-emerald-400 font-medium">programmer</span> yang telah aktif di dunia pengembangan perangkat lunak sejak <span class="text-white">tahun 2014</span>. 
-          Saya memiliki pengalaman luas dalam membangun aplikasi berbasis web dan mobile dengan fokus pada efisiensi, keamanan, serta pengalaman pengguna yang optimal.
-        </p>
-
-        <p>
-          Saya menguasai beberapa <span class="text-emerald-400 font-medium">bahasa pemrograman utama</span> seperti 
-          <span class="text-white">HTML</span>, <span class="text-white">CSS</span>, <span class="text-white">JavaScript</span>, dan <span class="text-white">PHP</span>, 
-          serta memiliki kemampuan dalam mengembangkan aplikasi menggunakan berbagai <span class="text-emerald-400 font-medium">framework dan teknologi modern</span> seperti:
-        </p>
-
-        <ul class="list-disc list-inside space-y-1 ml-4">
-          <li><span class="text-white">Laravel</span> — backend development yang kuat dan terstruktur.</li>
-          <li><span class="text-white">Vue.js</span> dan <span class="text-white">React.js</span> — antarmuka web interaktif dan responsif.</li>
-          <li><span class="text-white">React Native</span> dan <span class="text-white">CapacitorJS</span> — pengembangan aplikasi mobile lintas platform.</li>
-          <li><span class="text-white">Node.js</span> — server-side development dengan performa tinggi.</li>
-          <li><span class="text-white">MySQL</span> — sistem manajemen basis data utama.</li>
-        </ul>
-
-        <p>
-          Saya terus berupaya untuk memperluas pengetahuan dan mengikuti perkembangan teknologi terbaru agar dapat menghadirkan 
-          solusi digital yang inovatif dan berdampak nyata.
-        </p>
-      </div>
-    </section>
-    
-    <section id="contact" class="mb-12">
-      <div class="text-center mb-12" data-aos="fade-up">
-        <h2 class="text-3xl font-bold text-white">Hubungi Saya</h2>
-        <div class="h-1 w-24 bg-emerald-500 mx-auto mt-2 rounded-full"></div>
-      </div>
-      
-      <div class="flex justify-center" data-aos="fade-up">
-        <div class="flex space-x-6">
-          <a href="https://github.com/aepsaprul" target="_blank" class="transform transition-transform hover:scale-125 hover:-translate-y-1">
-            <img src="img/github.png" alt="github" class="w-12 h-12">
-          </a>
-          <a href="https://www.linkedin.com/in/aep-saprul-mujahid-734782a7/" target="_blank" class="transform transition-transform hover:scale-125 hover:-translate-y-1">
-            <img src="img/linkedin.png" alt="linkedin" class="w-12 h-12">
-          </a>
-          <a href="https://wa.me/6281337667055" target="_blank" class="transform transition-transform hover:scale-125 hover:-translate-y-1">
-            <img src="img/whatsapp.png" alt="whatsapp" class="w-12 h-12">
-          </a>
-          <a href="https://t.me/Aepsemprul" target="_blank" class="transform transition-transform hover:scale-125 hover:-translate-y-1">
-            <img src="img/telegram.png" alt="telegram" class="w-12 h-12">
-          </a>
-          <a href="https://discord.com" target="_blank" class="transform transition-transform hover:scale-125 hover:-translate-y-1">
-            <img src="img/discord.png" alt="discord" class="w-12 h-12">
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <footer class="text-center text-xs text-slate-500 mt-20">
-      <p>&copy; 2025 Aep Saprul Mujahid. All rights reserved.</p>
-      <div class="mt-2">
-        <a href="https://www.flaticon.com/free-icons/telegram" title="telegram icons" class="hover:text-emerald-400">Telegram icon</a> |
-        <a href="https://www.flaticon.com/free-icons/whatsapp" title="whatsapp icons" class="hover:text-emerald-400">Whatsapp icon</a> |
-        <a href="https://www.flaticon.com/free-icons/github" title="github icons" class="hover:text-emerald-400">Github icon</a> |
-        <a href="https://www.flaticon.com/free-icons/linkedin" title="linkedin icons" class="hover:text-emerald-400">Linkedin icon</a> by Ruslan Babkin - Flaticon
-        <a href="https://www.flaticon.com/free-icons/discord" title="discord icons">Discord icons created by Ruslan Babkin - Flaticon</a>
-      </div>
-    </footer>
-    
-  </div>
-
-  <!-- modal antrian -->
-  <div data-te-modal-init class="fixed top-0 left-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none" id="antrian" tabindex="-1" aria-labelledby="antrianLabel" aria-modal="true" role="dialog">
-    <div data-te-modal-dialog-ref class="pointer-events-none relative w-auto translate-y-[-50px] opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[992px]:max-w-[800px] min-[1200px]:max-w-[1140px]">
-      <div class="pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-slate-800 text-slate-300 shadow-lg outline-none">
-        <div class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-slate-700 p-4">
-          <h5 class="text-xl font-medium leading-normal text-white" id="antrianLabel">Aplikasi Antrian</h5>
-          <button type="button" class="box-content rounded-none border-none text-white hover:text-emerald-400 focus:outline-none" data-te-modal-dismiss aria-label="Close">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
-          </button>
-        </div>
-        <div class="relative p-4">
-            <div>
-                <p class="indent-20 text-justify mb-5">
-                  Aplikasi antrian bertujuan untuk mempermudah proses pengantri di suatu tempat atau layanan. Aplikasi ini akan memungkinkan pengguna untuk mendaftar dan memilih jenis layanan yang ingin diakses.
-                </p>
-                <p>
-                  Beberapa fitur dalam aplikasi antrian antara lain:
-                  <ul class="list-disc list-inside ml-4 space-y-1 mt-2">
-                    <li>Pengguna mencetak nomor antrian secara mandiri</li>
-                    <li>Panggilan suara</li>
-                    <li>Monitoring Antrian</li>
-                    <li>Laporan pengunjung</li>
-                  </ul>
-                </p>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mt-5">
-              <div class="border border-slate-700 p-2 rounded-lg">
-                <img src="img/antrian/ab_antrian_1.png" alt="" class="rounded-md">
-                <div class="text-center mt-2 text-sm">Form Login</div>
-              </div>
-              <div class="border border-slate-700 p-2 rounded-lg">
-                <img src="img/antrian/ab_antrian_2.png" alt="" class="rounded-md">
-                <div class="text-center mt-2 text-sm">Dashboard</div>
-              </div>
-              <div class="border border-slate-700 p-2 rounded-lg">
-                <img src="img/antrian/ab_antrian_3.png" alt="" class="rounded-md">
-                <div class="text-center mt-2 text-sm">Form Customer</div>
-              </div>
-              <div class="border border-slate-700 p-2 rounded-lg">
-                <img src="img/antrian/ab_antrian_4.png" alt="" class="rounded-md">
-                <div class="text-center mt-2 text-sm">Monitoring Antrian</div>
-              </div>
-              <div class="border border-slate-700 p-2 rounded-lg">
-                <img src="img/antrian/ab_antrian_5.png" alt="" class="rounded-md">
-                <div class="text-center mt-2 text-sm">Customer Panggil</div>
-              </div>
-              <div class="border border-slate-700 p-2 rounded-lg">
-                <img src="img/antrian/ab_antrian_6.jpeg" alt="" class="rounded-md">
-                <div class="text-center mt-2 text-sm">Nomor Antrian</div>
-              </div>
-            </div>
-        </div>
-      </div>
+      <button
+        type="button"
+        onclick="downloadPDF()"
+        aria-label="Download CV sebagai PDF"
+        class="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-200"
+      >
+        <svg aria-hidden="true" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v12m0 0 4-4m-4 4-4-4m-5 4v2a2 2 0 002 2h14a2 2 0 002-2v-2" />
+        </svg>
+        Download PDF
+      </button>
     </div>
   </div>
 
-  <!-- modal company profile -->
-  <div data-te-modal-init class="fixed top-0 left-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none" id="companyProfile" tabindex="-1" aria-labelledby="companyProfileLabel" aria-modal="true" role="dialog">
-    <div data-te-modal-dialog-ref class="pointer-events-none relative w-auto translate-y-[-50px] opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[992px]:max-w-[800px] min-[1200px]:max-w-[1140px]">
-      <div class="pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-slate-800 text-slate-300 shadow-lg outline-none">
-        <div class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-slate-700 p-4">
-          <h5 class="text-xl font-medium leading-normal text-white" id="companyProfileLabel">Web Company Profile</h5>
-          <button type="button" class="box-content rounded-none border-none text-white hover:text-emerald-400 focus:outline-none" data-te-modal-dismiss aria-label="Close">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
-          </button>
+  <!-- =========================================================
+    MAIN CV CONTAINER
+  ========================================================== -->
+  <main id="top" class="print-container mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
+
+    <!-- =======================================================
+      HEADER / PROFILE
+      DATA DUMMY: Ganti nama, kontak, link, dan foto di sini.
+    ======================================================== -->
+    <header class="print-card fade-in rounded-2xl border border-slate-200 bg-white p-6 shadow-soft sm:p-8">
+      <div class="flex flex-col gap-7 md:flex-row md:items-start md:justify-between">
+        <div class="flex flex-col gap-5 sm:flex-row sm:items-center">
+          <img
+            src="foto.jpg"
+            alt="Foto profil Aep Saprul Mujahid"
+            class="h-28 w-28 rounded-full border-4 border-blue-50 object-cover shadow-md"
+          />
+
+          <div>
+            <!-- <p class="mb-2 inline-flex rounded-full bg-blue-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-blue-700">
+              Available for opportunities
+            </p> -->
+            <h1 class="text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl">
+              Aep Saprul Mujahid
+            </h1>
+            <p class="mt-1 text-lg font-semibold text-blue-600">Full Stack Developer</p>
+
+            <div class="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm text-slate-600">
+              <span class="inline-flex items-center gap-1.5">
+                <svg aria-hidden="true" class="h-4 w-4 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 21s7-5.5 7-12A7 7 0 105 9c0 6.5 7 12 7 12z" />
+                  <circle cx="12" cy="9" r="2.2" />
+                </svg>
+                Banyumas, Indonesia
+              </span>
+
+              <a href="mailto:aepsaprulmujahid@gmail.com" class="inline-flex items-center gap-1.5 transition hover:text-blue-600">
+                <svg aria-hidden="true" class="h-4 w-4 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <rect x="3" y="5" width="18" height="14" rx="2" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m3 7 9 6 9-6" />
+                </svg>
+                aepsaprulmujahid@gmail.com
+              </a>
+
+              <a href="tel:+6281337667055" class="inline-flex items-center gap-1.5 transition hover:text-blue-600">
+                <svg aria-hidden="true" class="h-4 w-4 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.4 19.4 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 2 .7 2.9a2 2 0 01-.5 2.1L8 10a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.5c.9.3 1.9.6 2.9.7a2 2 0 011.7 2z" />
+                </svg>
+                +62 813-3766-7055
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="relative p-4">
-            <div>
-                <p class="indent-20 text-justify mb-5">
-                  Website company profile bertujuan untuk memperkenalkan sebuah perusahaan atau organisasi secara online. Website ini akan berisi informasi tentang sejarah, visi dan misi, produk atau layanan yang ditawarkan, dan prestasi perusahaan.
-                </p>
-                <p>
-                  Beberapa fitur dalam website company profile antara lain:
-                  <ul class="list-disc ml-6 mt-2 space-y-1 [list-style-position:outside]">
-                    <li class="pl-2 text-justify">
-                      Tentang perusahaan: Halaman ini akan berisi informasi tentang sejarah dan profil perusahaan, visi dan misi, nilai-nilai yang dipegang, serta penghargaan dan sertifikasi yang pernah diraih.
-                    </li>
-                    <li class="pl-2 text-justify">
-                      Produk dan layanan: Halaman ini akan berisi informasi lengkap tentang produk atau layanan yang ditawarkan oleh perusahaan, termasuk spesifikasi produk dan harga.
-                    </li>
-                    <li class="pl-2 text-justify">
-                      Kontak dan lokasi: Halaman ini akan menyediakan informasi kontak perusahaan seperti nomor telepon, email, dan alamat kantor.
-                    </li>
-                  </ul>
-                </p>
-                <p class="indent-20 text-justify mt-2">
-                  Dengan adanya website company profile ini, diharapkan perusahaan dapat lebih mudah memperkenalkan diri dan meningkatkan brand awareness. Selain itu, website ini juga dapat meningkatkan kredibilitas perusahaan di mata calon pelanggan dan investor.
-                </p>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mt-5">
-              <div class="border border-slate-700 p-2 rounded-lg">
-                <img src="img/company_profile/1.jpg" alt="" class="rounded-md">
-                <div class="text-center mt-2 text-sm">Tentang</div>
-              </div>
-              <div class="border border-slate-700 p-2 rounded-lg">
-                <img src="img/company_profile/2.jpg" alt="" class="rounded-md">
-                <div class="text-center mt-2 text-sm">Layanan</div>
-              </div>
-              <div class="border border-slate-700 p-2 rounded-lg">
-                <img src="img/company_profile/3.jpg" alt="" class="rounded-md">
-                <div class="text-center mt-2 text-sm">Cabang</div>
-              </div>
-              <div class="border border-slate-700 p-2 rounded-lg">
-                <img src="img/company_profile/4.jpg" alt="" class="rounded-md">
-                <div class="text-center mt-2 text-sm">Produk</div>
-              </div>
-              <div class="border border-slate-700 p-2 rounded-lg">
-                <img src="img/company_profile/5.png" alt="" class="rounded-md">
-                <div class="text-center mt-2 text-sm">Blog</div>
-              </div>
-            </div>
+
+        <div class="grid gap-2 text-sm md:min-w-[190px]">
+          <a href="https://github.com/aepsaprul" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-lg px-3 py-2 font-medium text-slate-600 transition hover:bg-slate-50 hover:text-blue-600">
+            <svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 .7a11.3 11.3 0 00-3.6 22c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.7-1.3-1.7-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.9 1.4 3.6 1.1.1-.8.4-1.4.8-1.7-2.7-.3-5.5-1.4-5.5-6a4.7 4.7 0 011.3-3.3 4.4 4.4 0 01.1-3.3s1.1-.4 3.7 1.3a12.5 12.5 0 016.7 0c2.5-1.7 3.7-1.3 3.7-1.3.5 1.3.2 2.7.1 3.3a4.7 4.7 0 011.3 3.3c0 4.6-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A11.3 11.3 0 0012 .7z" />
+            </svg>
+            https://github.com/aepsaprul
+          </a>
+
+          <!-- <a href="https://linkedin.com/in/username" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-lg px-3 py-2 font-medium text-slate-600 transition hover:bg-slate-50 hover:text-blue-600">
+            <svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20.5 3h-17A1.5 1.5 0 002 4.5v17A1.5 1.5 0 003.5 23h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 3zM8 19H5V9h3v10zM6.5 7.7A1.8 1.8 0 116.5 4a1.8 1.8 0 010 3.7zM19 19h-3v-4.9c0-1.2 0-2.7-1.7-2.7s-1.9 1.3-1.9 2.6V19h-3V9h2.9v1.4h.1c.4-.8 1.4-1.7 3-1.7 3.2 0 3.8 2.1 3.8 4.8V19z" />
+            </svg>
+            linkedin.com/in/username
+          </a> -->
+
+          <!-- <a href="https://portfolio-anda.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-lg px-3 py-2 font-medium text-slate-600 transition hover:bg-slate-50 hover:text-blue-600">
+            <svg aria-hidden="true" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14 3h7v7m0-7-9 9" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 14v5a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h5" />
+            </svg>
+            portfolio-anda.com
+          </a> -->
         </div>
       </div>
-    </div>
-  </div>
 
-  <!-- modal complaint -->
-  <div data-te-modal-init class="fixed top-0 left-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none" id="complaint" tabindex="-1" aria-labelledby="complaintLabel" aria-modal="true" role="dialog">
-    <div data-te-modal-dialog-ref class="pointer-events-none relative w-auto translate-y-[-50px] opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[992px]:max-w-[800px] min-[1200px]:max-w-[1140px]">
-      <div class="pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-slate-800 text-slate-300 shadow-lg outline-none">
-        <div class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-slate-700 p-4">
-          <h5 class="text-xl font-medium leading-normal text-white" id="complaintLabel">Web Kritik dan Saran / Complaint</h5>
-          <button type="button" class="box-content rounded-none border-none text-white hover:text-emerald-400 focus:outline-none" data-te-modal-dismiss aria-label="Close">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
-          </button>
-        </div>
-        <div class="relative p-4">
+      <!-- Header Action Buttons -->
+      <div class="no-print mt-7 flex flex-wrap gap-3 border-t border-slate-100 pt-6">
+        <button type="button" onclick="downloadPDF()" class="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-blue-700 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-200">
+          <svg aria-hidden="true" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v12m0 0 4-4m-4 4-4-4m-5 4v2a2 2 0 002 2h14a2 2 0 002-2v-2" />
+          </svg>
+          Download PDF
+        </button>
+
+        <a href="https://github.com/username" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700">
+          <svg aria-hidden="true" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 .7a11.3 11.3 0 00-3.6 22c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.7-1.3-1.7-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.9 1.4 3.6 1.1.1-.8.4-1.4.8-1.7-2.7-.3-5.5-1.4-5.5-6a4.7 4.7 0 011.3-3.3 4.4 4.4 0 01.1-3.3s1.1-.4 3.7 1.3a12.5 12.5 0 016.7 0c2.5-1.7 3.7-1.3 3.7-1.3.5 1.3.2 2.7.1 3.3a4.7 4.7 0 011.3 3.3c0 4.6-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A11.3 11.3 0 0012 .7z" />
+          </svg>
+          GitHub
+        </a>
+
+        <a href="https://portfolio-anda.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700">
+          <svg aria-hidden="true" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M14 3h7v7m0-7-9 9" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 14v5a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h5" />
+          </svg>
+          Portfolio
+        </a>
+      </div>
+    </header>
+
+    <div class="mt-8 grid gap-8 lg:grid-cols-[1fr_2.05fr]">
+
+      <!-- =====================================================
+        LEFT COLUMN
+      ====================================================== -->
+      <aside class="space-y-8">
+
+        <!-- ABOUT -->
+        <section class="print-card fade-up delay-1 rounded-2xl border border-slate-200 bg-white p-6 shadow-card">
+          <h2 class="section-title">Tentang Saya</h2>
+          <p class="text-sm leading-7 text-slate-600">
+            Full Stack Developer dengan pengalaman sejak 2016 dalam membangun aplikasi web yang cepat, aman, dan mudah dikembangkan. Saya berfokus pada pengembangan produk digital end-to-end, mulai dari analisis kebutuhan, perancangan arsitektur, pengembangan API, hingga deployment. Terbiasa bekerja menggunakan Laravel, NodeJs, VueJs, ReactJs, dan MySQL. Memiliki pengalaman berkolaborasi dalam tim agile untuk menghadirkan solusi yang berdampak pada proses bisnis. Saya mengutamakan clean code, performa aplikasi, keamanan data, serta pengalaman pengguna yang intuitif. Terbuka untuk tantangan baru dalam membangun produk teknologi berskala besar.
+          </p>
+        </section>
+
+        <!-- SKILLS -->
+        <section class="print-card fade-up delay-2 rounded-2xl border border-slate-200 bg-white p-6 shadow-card">
+          <h2 class="section-title">Keahlian Teknis</h2>
+
+          <div class="space-y-5">
             <div>
-                <p class="indent-20 text-justify mb-5">
-                  Website complaint bertujuan untuk memudahkan pelanggan dalam menyampaikan keluhan atau masalah terkait produk atau layanan suatu perusahaan. Website ini akan menyediakan platform bagi pelanggan untuk mengirimkan keluhan secara online dan akan mempermudah perusahaan dalam memproses dan menindaklanjuti keluhan tersebut.
-                </p>
-                <p>
-                  Beberapa fitur dalam website complaint antara lain:
-                  <ul class="list-disc ml-6 mt-2 space-y-1 [list-style-position:outside]">
-                    <li class="pl-2 text-justify"><b>Formulir keluhan</b>: Halaman ini akan berisi formulir yang dapat diisi oleh pelanggan untuk menyampaikan keluhan atau masalah yang dialami. Formulir ini akan mencakup informasi seperti nama pelanggan, nomor telepon, email, dan deskripsi masalah.</li>
-                    <li class="pl-2 text-justify"><b>Database keluhan</b> Perusahaan dapat mengelola dan melacak semua keluhan yang masuk dan melakukan analisis data untuk memperbaiki produk atau layanan mereka.</li>
-                  </ul>
-                </p>
-                <p class="indent-20 text-justify mt-2">
-                  Dengan adanya website complaint ini, diharapkan pelanggan dapat lebih mudah menyampaikan keluhan dan perusahaan dapat lebih cepat menindaklanjuti keluhan tersebut. Selain itu, perusahaan juga dapat meningkatkan kepuasan pelanggan dan meningkatkan reputasi mereka di mata publik dengan menangani keluhan dengan baik.
-                </p>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mt-5">
-              <div class="border border-slate-700 p-2 rounded-lg">
-                <img src="img/complaint/ab_complaint_1.png" alt="" class="rounded-md">
-                <div class="text-center mt-2 text-sm">Input Complaint</div>
-              </div>
-              <div class="border border-slate-700 p-2 rounded-lg">
-                <img src="img/complaint/ab_complaint_2.png" alt="" class="rounded-md">
-                <div class="text-center mt-2 text-sm">Data Complaint</div>
-              </div>
-              <div class="border border-slate-700 p-2 rounded-lg">
-                <img src="img/complaint/ab_complaint_3.png" alt="" class="rounded-md">
-                <div class="text-center mt-2 text-sm">Update Complaint</div>
+              <h3 class="mb-2 text-xs font-bold uppercase tracking-wider text-slate-500">Backend</h3>
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-badge">Laravel</span>
+                <span class="skill-badge">PHP</span>
+                <span class="skill-badge">Node.js</span>
+                <span class="skill-badge">Express</span>
+                <span class="skill-badge">REST API</span>
               </div>
             </div>
-        </div>
+
+            <div>
+              <h3 class="mb-2 text-xs font-bold uppercase tracking-wider text-slate-500">Frontend</h3>
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-badge">Vue.js</span>
+                <span class="skill-badge">React.js</span>
+                <span class="skill-badge">JavaScript</span>
+                <span class="skill-badge">TypeScript</span>
+                <span class="skill-badge">HTML5</span>
+                <span class="skill-badge">CSS3</span>
+                <span class="skill-badge">Tailwind CSS</span>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="mb-2 text-xs font-bold uppercase tracking-wider text-slate-500">Database</h3>
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-badge">MySQL</span>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="mb-2 text-xs font-bold uppercase tracking-wider text-slate-500">Tools</h3>
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-badge">Git</span>
+                <span class="skill-badge">GitHub</span>
+                <span class="skill-badge">Postman</span>
+                <span class="skill-badge">Linux</span>
+                <span class="skill-badge">VS Code</span>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="mb-2 text-xs font-bold uppercase tracking-wider text-slate-500">Artificial Intelligence</h3>
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-badge">Gemini API</span>
+                <span class="skill-badge">Prompt Engineering</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- LANGUAGES -->
+        <!-- <section class="print-card fade-up delay-3 rounded-2xl border border-slate-200 bg-white p-6 shadow-card">
+          <h2 class="section-title">Bahasa</h2>
+
+          <div class="space-y-4">
+            <div>
+              <div class="mb-2 flex items-center justify-between text-sm">
+                <span class="font-semibold text-slate-800">Indonesia</span>
+                <span class="text-slate-500">Native</span>
+              </div>
+              <div class="h-2 overflow-hidden rounded-full bg-slate-100">
+                <div class="h-full w-full rounded-full bg-blue-600"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="mb-2 flex items-center justify-between text-sm">
+                <span class="font-semibold text-slate-800">English</span>
+                <span class="text-slate-500">Professional Working</span>
+              </div>
+              <div class="h-2 overflow-hidden rounded-full bg-slate-100">
+                <div class="h-full w-4/5 rounded-full bg-blue-600"></div>
+              </div>
+            </div>
+          </div>
+        </section> -->
+
+        <!-- ACHIEVEMENTS -->
+        <!-- <section class="print-card fade-up delay-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-card">
+          <h2 class="section-title">Prestasi</h2>
+          <ul class="space-y-3 text-sm leading-6 text-slate-600">
+            <li class="flex gap-3">
+              <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-blue-600"></span>
+              Mengurangi waktu proses operasional hingga 40% melalui otomatisasi sistem internal.
+            </li>
+            <li class="flex gap-3">
+              <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-blue-600"></span>
+              Membangun dan merilis lebih dari 15 fitur produk dalam lingkungan agile.
+            </li>
+            <li class="flex gap-3">
+              <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-blue-600"></span>
+              Menjadi mentor internal untuk praktik Git workflow dan code review.
+            </li>
+          </ul>
+        </section> -->
+      </aside>
+
+      <!-- =====================================================
+        RIGHT COLUMN
+      ====================================================== -->
+      <div class="space-y-8">
+
+        <!-- WORK EXPERIENCE -->
+        <section class="print-card fade-up delay-1 rounded-2xl border border-slate-200 bg-white p-6 shadow-card sm:p-8">
+          <h2 class="section-title">Pengalaman Kerja</h2>
+
+          <div class="relative ml-2 border-l-2 border-blue-100 pl-7">
+            <!-- Experience 1 -->
+            <article class="avoid-break relative pb-9">
+              <span class="absolute -left-[35px] top-1 flex h-4 w-4 items-center justify-center rounded-full border-4 border-white bg-blue-600 shadow-sm"></span>
+              <div class="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <h3 class="text-base font-bold text-slate-900">Senior Full Stack Developer</h3>
+                  <p class="text-sm font-semibold text-blue-600">PT Shaantech Mitra Globalindo</p>
+                </div>
+                <span class="w-fit rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-600">2025 — Sekarang</span>
+              </div>
+              <ul class="mt-4 space-y-2 text-sm leading-6 text-slate-600">
+                <li class="flex gap-2"><span class="text-blue-600">•</span>Membangun web aplikasi Traceability Pala.</li>
+                <li class="flex gap-2"><span class="text-blue-600">•</span>Membangun web aplikasi HRIS.</li>
+                <li class="flex gap-2"><span class="text-blue-600">•</span>Membangun web aplikasi kasir retail dan f&b.</li>
+                <li class="flex gap-2"><span class="text-blue-600">•</span>Membangun web aplikasi RTRW.</li>
+                <li class="flex gap-2"><span class="text-blue-600">•</span>Membangun web aplikasi Ronda.</li>
+              </ul>
+            </article>
+
+            <!-- Experience 2 -->
+            <article class="avoid-break relative pb-9">
+              <span class="absolute -left-[35px] top-1 flex h-4 w-4 items-center justify-center rounded-full border-4 border-white bg-blue-600 shadow-sm"></span>
+              <div class="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <h3 class="text-base font-bold text-slate-900">Full Stack Developer</h3>
+                  <p class="text-sm font-semibold text-blue-600">PT Hae Hoe Cemerlang</p>
+                </div>
+                <span class="w-fit rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-600">2021 — 2025</span>
+              </div>
+              <ul class="mt-4 space-y-2 text-sm leading-6 text-slate-600">
+                <li class="flex gap-2"><span class="text-blue-600">•</span>Membangun web aplikasi antrian multi cabang.</li>
+                <li class="flex gap-2"><span class="text-blue-600">•</span>Membangun web aplikasi HRIS.</li>
+                <li class="flex gap-2"><span class="text-blue-600">•</span>Membangun web aplikasi SPK antar cabang.</li>
+                <li class="flex gap-2"><span class="text-blue-600">•</span>Membangun web company profile.</li>
+                <li class="flex gap-2"><span class="text-blue-600">•</span>Membangun web penjualan produk digital printing.</li>
+              </ul>
+            </article>
+
+            <!-- Experience 3 -->
+            <article class="avoid-break relative pb-9">
+              <span class="absolute -left-[35px] top-1 flex h-4 w-4 items-center justify-center rounded-full border-4 border-white bg-blue-600 shadow-sm"></span>
+              <div class="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <h3 class="text-base font-bold text-slate-900">Advertiser</h3>
+                  <p class="text-sm font-semibold text-blue-600">Lusie Store</p>
+                </div>
+                <span class="w-fit rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-600">2020</span>
+              </div>
+              <ul class="mt-4 space-y-2 text-sm leading-6 text-slate-600">
+                <li class="flex gap-2"><span class="text-blue-600">•</span>Membuat iklan facebook.</li>
+              </ul>
+            </article>
+
+            <!-- Experience 3 -->
+            <article class="avoid-break relative">
+              <span class="absolute -left-[35px] top-1 flex h-4 w-4 items-center justify-center rounded-full border-4 border-white bg-blue-600 shadow-sm"></span>
+              <div class="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <h3 class="text-base font-bold text-slate-900">Full Stack Developer</h3>
+                  <p class="text-sm font-semibold text-blue-600">PT Qyta Trans Group</p>
+                </div>
+                <span class="w-fit rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-600">2016 - 2020</span>
+              </div>
+              <ul class="mt-4 space-y-2 text-sm leading-6 text-slate-600">
+                <li class="flex gap-2"><span class="text-blue-600">•</span>Membuat web aplikasi HRIS.</li>
+                <li class="flex gap-2"><span class="text-blue-600">•</span>Membuat bot telegram untuk laporan investor.</li>
+                <li class="flex gap-2"><span class="text-blue-600">•</span>Membuat web checker kendaraan.</li>
+                <li class="flex gap-2"><span class="text-blue-600">•</span>Berkontribusi dalam pengembangan web aplikasi travel.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <!-- <section class="fade-up delay-2">
+          <h2 class="section-title px-1">Project Pilihan</h2>
+
+          <div class="print-projects grid gap-5 md:grid-cols-2"> -->
+            <!-- Project 1 -->
+            <!-- <article class="project-card print-card hover-lift overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-card">
+              <div class="project-preview project-grid-pattern flex min-h-36 items-center justify-center p-6">
+                <div class="rounded-xl border border-white/20 bg-white/15 px-5 py-3 text-center backdrop-blur">
+                  <span class="text-sm font-bold text-white">POS System</span>
+                  <p class="mt-1 text-xs text-blue-100">Retail Management Dashboard</p>
+                </div>
+              </div>
+              <div class="p-5">
+                <h3 class="font-bold text-slate-900">POS System</h3>
+                <p class="mt-2 text-sm leading-6 text-slate-600">Sistem point-of-sale terintegrasi untuk manajemen transaksi, stok, pelanggan, dan laporan penjualan.</p>
+                <p class="mt-3 text-xs font-semibold text-slate-500">Laravel · Vue.js · MySQL · Tailwind CSS</p>
+                <p class="mt-2 text-xs text-slate-500">Fitur: Kasir, stok real-time, invoice, laporan, role management.</p>
+                <div class="no-print mt-4 flex gap-3 text-sm font-semibold">
+                  <a href="#" class="text-blue-600 hover:text-blue-800">Demo ↗</a>
+                  <a href="#" class="text-slate-600 hover:text-blue-600">GitHub ↗</a>
+                </div>
+              </div>
+            </article> -->
+
+            <!-- Project 2 -->
+            <!-- <article class="project-card print-card hover-lift overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-card">
+              <div class="project-preview project-grid-pattern flex min-h-36 items-center justify-center p-6">
+                <div class="rounded-xl border border-white/20 bg-white/15 px-5 py-3 text-center backdrop-blur">
+                  <span class="text-sm font-bold text-white">HRIS Platform</span>
+                  <p class="mt-1 text-xs text-blue-100">Employee Self Service</p>
+                </div>
+              </div>
+              <div class="p-5">
+                <h3 class="font-bold text-slate-900">HRIS</h3>
+                <p class="mt-2 text-sm leading-6 text-slate-600">Platform human resource untuk mengelola data karyawan, absensi, cuti, payroll, dan evaluasi.</p>
+                <p class="mt-3 text-xs font-semibold text-slate-500">Node.js · Express · PostgreSQL · Vue.js</p>
+                <p class="mt-2 text-xs text-slate-500">Fitur: Absensi, approval cuti, payroll, dashboard HR, export laporan.</p>
+                <div class="no-print mt-4 flex gap-3 text-sm font-semibold">
+                  <a href="#" class="text-blue-600 hover:text-blue-800">Demo ↗</a>
+                  <a href="#" class="text-slate-600 hover:text-blue-600">GitHub ↗</a>
+                </div>
+              </div>
+            </article> -->
+
+            <!-- Project 3 -->
+            <!-- <article class="project-card print-card hover-lift overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-card">
+              <div class="project-preview project-grid-pattern flex min-h-36 items-center justify-center p-6">
+                <div class="rounded-xl border border-white/20 bg-white/15 px-5 py-3 text-center backdrop-blur">
+                  <span class="text-sm font-bold text-white">Inventory System</span>
+                  <p class="mt-1 text-xs text-blue-100">Warehouse Control</p>
+                </div>
+              </div>
+              <div class="p-5">
+                <h3 class="font-bold text-slate-900">Inventory System</h3>
+                <p class="mt-2 text-sm leading-6 text-slate-600">Aplikasi inventaris untuk pelacakan barang, mutasi gudang, pembelian, dan notifikasi stok minimum.</p>
+                <p class="mt-3 text-xs font-semibold text-slate-500">Laravel · PostgreSQL · REST API · Docker</p>
+                <p class="mt-2 text-xs text-slate-500">Fitur: Multi-gudang, barcode, stok opname, supplier, audit log.</p>
+                <div class="no-print mt-4 flex gap-3 text-sm font-semibold">
+                  <a href="#" class="text-blue-600 hover:text-blue-800">Demo ↗</a>
+                  <a href="#" class="text-slate-600 hover:text-blue-600">GitHub ↗</a>
+                </div>
+              </div>
+            </article> -->
+
+            <!-- Project 4 -->
+            <!-- <article class="project-card print-card hover-lift overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-card">
+              <div class="project-preview project-grid-pattern flex min-h-36 items-center justify-center p-6">
+                <div class="rounded-xl border border-white/20 bg-white/15 px-5 py-3 text-center backdrop-blur">
+                  <span class="text-sm font-bold text-white">Company Profile</span>
+                  <p class="mt-1 text-xs text-blue-100">Corporate Website</p>
+                </div>
+              </div>
+              <div class="p-5">
+                <h3 class="font-bold text-slate-900">Company Profile</h3>
+                <p class="mt-2 text-sm leading-6 text-slate-600">Website korporat modern dengan CMS ringan, SEO teknis, formulir lead, dan optimasi performa.</p>
+                <p class="mt-3 text-xs font-semibold text-slate-500">HTML5 · Tailwind CSS · JavaScript · Nginx</p>
+                <p class="mt-2 text-xs text-slate-500">Fitur: CMS konten, SEO, katalog layanan, lead form, analytics.</p>
+                <div class="no-print mt-4 flex gap-3 text-sm font-semibold">
+                  <a href="#" class="text-blue-600 hover:text-blue-800">Demo ↗</a>
+                  <a href="#" class="text-slate-600 hover:text-blue-600">GitHub ↗</a>
+                </div>
+              </div>
+            </article> -->
+
+            <!-- Project 5 -->
+            <!-- <article class="project-card print-card hover-lift overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-card">
+              <div class="project-preview project-grid-pattern flex min-h-36 items-center justify-center p-6">
+                <div class="rounded-xl border border-white/20 bg-white/15 px-5 py-3 text-center backdrop-blur">
+                  <span class="text-sm font-bold text-white">Landing Page Builder</span>
+                  <p class="mt-1 text-xs text-blue-100">No-Code Marketing Tool</p>
+                </div>
+              </div>
+              <div class="p-5">
+                <h3 class="font-bold text-slate-900">Landing Page Builder</h3>
+                <p class="mt-2 text-sm leading-6 text-slate-600">Builder berbasis blok untuk membuat landing page pemasaran tanpa perlu menulis kode.</p>
+                <p class="mt-3 text-xs font-semibold text-slate-500">Vue.js · TypeScript · Node.js · PostgreSQL</p>
+                <p class="mt-2 text-xs text-slate-500">Fitur: Drag-and-drop, template, custom domain, publish, analytics.</p>
+                <div class="no-print mt-4 flex gap-3 text-sm font-semibold">
+                  <a href="#" class="text-blue-600 hover:text-blue-800">Demo ↗</a>
+                  <a href="#" class="text-slate-600 hover:text-blue-600">GitHub ↗</a>
+                </div>
+              </div>
+            </article> -->
+
+            <!-- Project 6 -->
+            <!-- <article class="project-card print-card hover-lift overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-card">
+              <div class="project-preview project-grid-pattern flex min-h-36 items-center justify-center p-6">
+                <div class="rounded-xl border border-white/20 bg-white/15 px-5 py-3 text-center backdrop-blur">
+                  <span class="text-sm font-bold text-white">AI Chat Assistant</span>
+                  <p class="mt-1 text-xs text-blue-100">Knowledge Base Automation</p>
+                </div>
+              </div>
+              <div class="p-5">
+                <h3 class="font-bold text-slate-900">AI Chat Assistant</h3>
+                <p class="mt-2 text-sm leading-6 text-slate-600">Asisten percakapan untuk menjawab pertanyaan pengguna berdasarkan knowledge base perusahaan.</p>
+                <p class="mt-3 text-xs font-semibold text-slate-500">OpenAI API · Node.js · Express · PostgreSQL</p>
+                <p class="mt-2 text-xs text-slate-500">Fitur: Chat history, context retrieval, admin panel, feedback, analytics.</p>
+                <div class="no-print mt-4 flex gap-3 text-sm font-semibold">
+                  <a href="#" class="text-blue-600 hover:text-blue-800">Demo ↗</a>
+                  <a href="#" class="text-slate-600 hover:text-blue-600">GitHub ↗</a>
+                </div>
+              </div>
+            </article> -->
+          <!-- </div>
+        </section> -->
+
+        <!-- EDUCATION & CERTIFICATES -->
+        <section class="print-two-column grid gap-8 lg:grid-cols-2">
+          <!-- EDUCATION -->
+          <div class="print-card fade-up delay-3 rounded-2xl border border-slate-200 bg-white p-6 shadow-card">
+            <h2 class="section-title">Pendidikan</h2>
+
+            <div class="relative ml-2 border-l-2 border-blue-100 pl-6">
+              <article class="relative pb-6">
+                <span class="absolute -left-[31px] top-1 h-3.5 w-3.5 rounded-full border-4 border-white bg-blue-600"></span>
+                <p class="text-sm font-bold text-slate-900">S1 Teknik Informatika</p>
+                <p class="mt-1 text-sm font-medium text-blue-600">Universitas Amikom Purwokerto</p>
+                <p class="mt-1 text-xs text-slate-500">2014 — 2018</p>
+                <p class="mt-2 text-sm leading-6 text-slate-600">Fokus pada rekayasa perangkat lunak, sistem informasi, basis data, dan pengembangan aplikasi web.</p>
+              </article>
+
+              <article class="relative">
+                <span class="absolute -left-[31px] top-1 h-3.5 w-3.5 rounded-full border-4 border-white bg-blue-600"></span>
+                <p class="text-sm font-bold text-slate-900">D3 Teknik Informatika</p>
+                <p class="mt-1 text-sm font-medium text-blue-600">Universitas Bina Sarana Informatika</p>
+                <p class="mt-1 text-xs text-slate-500">2011- 2014</p>
+              </article>
+            </div>
+          </div>
+
+          <!-- CERTIFICATIONS -->
+          <div class="print-card fade-up delay-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-card">
+            <h2 class="section-title">Sertifikat</h2>
+
+            <div class="space-y-3">
+              <article class="rounded-xl border border-slate-100 bg-slate-50 p-4">
+                <h3 class="text-sm font-bold text-slate-900">Belajar Dasar Manajemen Proyek</h3>
+                <p class="mt-1 text-xs text-slate-500">Dicoding · 2026</p>
+              </article>
+              
+              <article class="rounded-xl border border-slate-100 bg-slate-50 p-4">
+                <h3 class="text-sm font-bold text-slate-900">Belajar Dasar AI</h3>
+                <p class="mt-1 text-xs text-slate-500">Dicoding · 2026</p>
+              </article>
+              
+              <article class="rounded-xl border border-slate-100 bg-slate-50 p-4">
+                <h3 class="text-sm font-bold text-slate-900">Belajar Dasar Data Science</h3>
+                <p class="mt-1 text-xs text-slate-500">Dicoding · 2026</p>
+              </article>
+              
+              <article class="rounded-xl border border-slate-100 bg-slate-50 p-4">
+                <h3 class="text-sm font-bold text-slate-900">Belajar Dasar Prompt Engineering untuk Software Developer</h3>
+                <p class="mt-1 text-xs text-slate-500">Dicoding · 2026</p>
+              </article>
+              
+              <article class="rounded-xl border border-slate-100 bg-slate-50 p-4">
+                <h3 class="text-sm font-bold text-slate-900">Belajar Dasar UX Design</h3>
+                <p class="mt-1 text-xs text-slate-500">Dicoding · 2026</p>
+              </article>
+
+              <article class="rounded-xl border border-slate-100 bg-slate-50 p-4">
+                <h3 class="text-sm font-bold text-slate-900">Laravel</h3>
+                <p class="mt-1 text-xs text-slate-500">Udemy · 2025</p>
+              </article>
+
+              <article class="rounded-xl border border-slate-100 bg-slate-50 p-4">
+                <h3 class="text-sm font-bold text-slate-900">Javascript</h3>
+                <p class="mt-1 text-xs text-slate-500">Udemy · 2023</p>
+              </article>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
-  </div>
 
-  <!-- modal espk -->
-  <div data-te-modal-init class="fixed top-0 left-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none" id="espk" tabindex="-1" aria-labelledby="espkLabel" aria-modal="true" role="dialog">
-    <div data-te-modal-dialog-ref class="pointer-events-none relative w-auto translate-y-[-50px] opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[992px]:max-w-[800px] min-[1200px]:max-w-[1140px]">
-      <div class="pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-slate-800 text-slate-300 shadow-lg outline-none">
-        <div class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-slate-700 p-4">
-          <h5 class="text-xl font-medium leading-normal text-white" id="espkLabel">Aplikasi E-SPK (Surat Perintah Kerja)</h5>
-          <button type="button" class="box-content rounded-none border-none text-white hover:text-emerald-400 focus:outline-none" data-te-modal-dismiss aria-label="Close">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
-          </button>
-        </div>
-        <div class="relative p-4">
-            <div>
-                <p class="indent-20 text-justify mb-5">
-                  Espk bertujuan untuk mempermudah proses pembuatan dan manajemen surat perintah kerja secara digital.
-                </p>
-                <p>
-                  Beberapa fitur dalam aplikasi espk:
-                  <ul class="list-disc ml-6 mt-2 space-y-1 [list-style-position:outside]">
-                    <li class="pl-2 text-justify">Pembuatan surat perintah kerja secara online dengan format yang telah ditentukan</li>
-                    <li class="pl-2 text-justify">Manajemen surat perintah kerja yang telah dibuat, termasuk pencarian, pengeditan, dan penghapusan data.</li>
-                    <li class="pl-2 text-justify">Pelacakan status pekerjaan yang dilakukan sesuai dengan surat perintah kerja.</li>
-                    <li class="pl-2 text-justify">Laporan pelaksanaan pekerjaan berdasarkan surat perintah kerja.</li>
-                  </ul>
-                </p>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mt-5">
-              <div class="border border-slate-700 p-2 rounded-lg">
-                <img src="img/espk/1.png" alt="" class="rounded-md">
-                <div class="text-center mt-2 text-sm">Form Login</div>
-              </div>
-              <div class="border border-slate-700 p-2 rounded-lg">
-                <img src="img/espk/2.png" alt="" class="rounded-md">
-                <div class="text-center mt-2 text-sm">Dashboard</div>
-              </div>
-              <div class="border border-slate-700 p-2 rounded-lg">
-                <img src="img/espk/3.png" alt="" class="rounded-md">
-                <div class="text-center mt-2 text-sm">Data SPK</div>
-              </div>
-              <div class="border border-slate-700 p-2 rounded-lg">
-                <img src="img/espk/4.png" alt="" class="rounded-md">
-                <div class="text-center mt-2 text-sm">Update Status</div>
-              </div>
-              <div class="border border-slate-700 p-2 rounded-lg">
-                <img src="img/espk/5.png" alt="" class="rounded-md">
-                <div class="text-center mt-2 text-sm">Input Data</div>
-              </div>
-              <div class="border border-slate-700 p-2 rounded-lg">
-                <img src="img/espk/6.png" alt="" class="rounded-md">
-                <div class="text-center mt-2 text-sm">Laporan</div>
-              </div>
-              <div class="border border-slate-700 p-2 rounded-lg">
-                <img src="img/espk/7.png" alt="" class="rounded-md">
-                <div class="text-center mt-2 text-sm">SPK Jadi</div>
-              </div>
-            </div>
+    <!-- =======================================================
+      FOOTER
+    ======================================================== -->
+    <!-- <footer class="print-card fade-in mt-10 rounded-2xl border border-slate-200 bg-white px-6 py-5 shadow-card">
+      <div class="flex flex-col gap-3 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+        <p>© <span id="year"></span> Aep Saprul Mujahid. All rights reserved.</p>
+        <div class="flex flex-wrap gap-x-4 gap-y-2">
+          <a href="mailto:aepsaprulmujahid@gmail.com" class="transition hover:text-blue-600">aepsaprulmujahid@gmail.com</a>
+          <a href="https://github.com/aepsaprul" target="_blank" rel="noopener noreferrer" class="transition hover:text-blue-600">GitHub</a>
+          <a href="https://portfolio-anda.com" target="_blank" rel="noopener noreferrer" class="transition hover:text-blue-600">Portfolio</a>
         </div>
       </div>
-    </div>
-  </div>
+    </footer> -->
+  </main>
 
-  <!-- modal hris -->
-  <div data-te-modal-init class="fixed top-0 left-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none" id="hris" tabindex="-1" aria-labelledby="hrisLabel" aria-modal="true" role="dialog">
-    <div data-te-modal-dialog-ref class="pointer-events-none relative w-auto translate-y-[-50px] opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[992px]:max-w-[800px] min-[1200px]:max-w-[1140px]">
-      <div class="pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-slate-800 text-slate-300 shadow-lg outline-none">
-        <div class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-slate-700 p-4">
-          <h5 class="text-xl font-medium leading-normal text-white" id="hrisLabel">Aplikasi HRIS</h5>
-          <button type="button" class="box-content rounded-none border-none text-white hover:text-emerald-400 focus:outline-none" data-te-modal-dismiss aria-label="Close">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
-          </button>
-        </div>
-        <div class="relative p-4">
-            <div>
-                <p class="indent-20 text-justify mb-5">
-                  Aplikasi HRIS bertujuan untuk memudahkan manajemen HRD dalam melaksanakan kegiatan-kegiatan operasionalnya dan memberikan kemudahan akses informasi bagi karyawan dalam hal pengembangan karir dan manajemen sumber daya manusia.
-                </p>
-                <p>
-                  Beberapa fitur dalam aplikasi HRIS antara lain:
-                  <ul class="list-disc ml-6 mt-2 space-y-1 [list-style-position:outside]">
-                    <li class="pl-2 text-justify">Job vacancy dan rekrutmen: Fitur ini memungkinkan perusahaan untuk mempublikasikan lowongan pekerjaan yang tersedia dan menerima aplikasi secara online. Hal ini akan memudahkan pelamar dalam mencari informasi lowongan pekerjaan yang tersedia dan memudahkan HRD dalam memproses aplikasi.</li>
-                    <li class="pl-2 text-justify">Training dan development: Fitur ini memungkinkan HRD untuk menyediakan informasi tentang pelatihan dan pengembangan yang tersedia untuk karyawan.</li>
-                    <li class="pl-2 text-justify">Manajemen data karyawan: apilikasi HRIS dapat memiliki database yang memuat informasi tentang karyawan seperti nama, alamat, posisi, gaji, absensi, dan sebagainya.</li>
-                    <li class="pl-2 text-justify">Manajemen data karyawan: Website HRISs dapat memiliki database yang memuat informasi tentang karyawan seperti nama, alamat, posisi, gaji, absensi, dan sebagainya.</li>
-                    <li class="pl-2 text-justify">Cuti & Resign: Cuti & Resign sudah disertakan dengan fitur approval, apabila karyawan melakukan cuti / resign secara otomatis hanya atasannya yang bisa menyetujui atau menolaknya.</li>
-                  </ul>
-                </p>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mt-5">
-              <div class="border border-slate-700 p-2 rounded-lg">
-                <img src="img/hris/1.png" alt="" class="rounded-md">
-                <div class="text-center mt-2 text-sm">Form Login</div>
-              </div>
-              <div class="border border-slate-700 p-2 rounded-lg">
-                <img src="img/hris/2.png" alt="" class="rounded-md">
-                <div class="text-center mt-2 text-sm">Dashboard</div>
-              </div>
-              <div class="border border-slate-700 p-2 rounded-lg">
-                <img src="img/hris/3.png" alt="" class="rounded-md">
-                <div class="text-center mt-2 text-sm">Data Karyawan</div>
-              </div>
-              <div class="border border-slate-700 p-2 rounded-lg">
-                <img src="img/hris/4.png" alt="" class="rounded-md">
-                <div class="text-center mt-2 text-sm">Data Cuti</div>
-              </div>
-            </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- modal recruitment -->
-  <div data-te-modal-init class="fixed top-0 left-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none" id="recruitment" tabindex="-1" aria-labelledby="recruitmentLabel" aria-modal="true" role="dialog">
-    <div data-te-modal-dialog-ref class="pointer-events-none relative w-auto translate-y-[-50px] opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[992px]:max-w-[800px] min-[1200px]:max-w-[1140px]">
-      <div class="pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-slate-800 text-slate-300 shadow-lg outline-none">
-        <div class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-slate-700 p-4">
-          <h5 class="text-xl font-medium leading-normal text-white" id="recruitmentLabel">Aplikasi Recruitment</h5>
-          <button type="button" class="box-content rounded-none border-none text-white hover:text-emerald-400 focus:outline-none" data-te-modal-dismiss aria-label="Close">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
-          </button>
-        </div>
-        <div class="relative p-4">
-            <div>
-                <p class="indent-20 text-justify mb-5">
-                  Aplikasi Recruitment membantu perusahaan untuk memudahkan proses perekrutan karyawan baru. Aplikasi rekrutmen dapat membantu perusahaan untuk mencari dan menyeleksi kandidat potensial dengan lebih efisien dan efektif.
-                </p>
-                <p>
-                  Beberap fitur dalam aplikasi recruitment yaitu:
-                  <ul class="list-disc ml-6 mt-2 space-y-1 [list-style-position:outside]">
-                    <li class="pl-2 text-justify">Pendaftaran akun kandidat - Kandidat dapat membuat akun dan mengisi informasi pribadi serta riwayat pekerjaan mereka.</li>
-                    <li class="pl-2 text-justify">Pencarian lowongan pekerjaan - Kandidat dapat mencari lowongan pekerjaan yang sesuai dengan kualifikasi mereka.</li>
-                    <li class="pl-2 text-justify">Lamaran pekerjaan online - Kandidat dapat mengirimkan lamaran pekerjaan mereka secara online melalui platform tersebut.</li>
-                  </ul>
-                </p>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mt-5">
-              <div class="border border-slate-700 p-2 rounded-lg">
-                <img src="img/recruitment/1.png" alt="" class="rounded-md">
-                <div class="text-center mt-2 text-sm">Form Login</div>
-              </div>
-              <div class="border border-slate-700 p-2 rounded-lg">
-                <img src="img/recruitment/2.png" alt="" class="rounded-md">
-                <div class="text-center mt-2 text-sm">Dashboard</div>
-              </div>
-              <div class="border border-slate-700 p-2 rounded-lg">
-                <img src="img/recruitment/3.png" alt="" class="rounded-md">
-                <div class="text-center mt-2 text-sm">Data SPK</div>
-              </div>
-              <div class="border border-slate-700 p-2 rounded-lg">
-                <img src="img/recruitment/4.png" alt="" class="rounded-md">
-                <div class="text-center mt-2 text-sm">Update Status</div>
-              </div>
-            </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- modal ritel -->
-  <div data-te-modal-init class="fixed top-0 left-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none" id="ritel" tabindex="-1" aria-labelledby="ritelLabel" aria-modal="true" role="dialog">
-    <div data-te-modal-dialog-ref class="pointer-events-none relative w-auto translate-y-[-50px] opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[992px]:max-w-[800px] min-[1200px]:max-w-[1140px]">
-      <div class="pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-slate-800 text-slate-300 shadow-lg outline-none">
-        <div class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-slate-700 p-4">
-          <h5 class="text-xl font-medium leading-normal text-white" id="ritelLabel">Aplikasi Ritel</h5>
-          <button type="button" class="box-content rounded-none border-none text-white hover:text-emerald-400 focus:outline-none" data-te-modal-dismiss aria-label="Close">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
-          </button>
-        </div>
-        <div class="relative p-4">
-            <div>
-                <p class="indent-20 text-justify mb-5">
-                  Aplikasi Ritel membantu perusahaan untuk mengelola semua produknya serta berinteraksi dengan toko - toko yang sudah bekerja sama.
-                </p>
-                <p>
-                  Beberapa fitur dalam aplikasi ritel yaitu:
-                  <ul class="list-disc ml-6 mt-2 space-y-1 [list-style-position:outside]">
-                    <li class="pl-2 text-justify">Manajemen Gudang: Semua toko akan mengambil produknya dari gudang yang sudah ditentukan, semua transaksinya tercatat dalam aplikasi.</li>
-                    <li class="pl-2 text-justify">Manajemen Stok: semua stok gudang maupun stok yang ada disemua toko diolah oleh aplikasi.</li>
-                    <li class="pl-2 text-justify">Belanja: setiap toko bisa langsung membuat pesanan melalui aplikasi, kemudian bagian gudang akan menerima pesenan dan memprosesnya langsung.</li>
-                    <li class="pl-2 text-justify">Responsive: dengan aplikasi yang responsive pengguna tidak perlu harus punya PC Desktop atau Laptop, karena bisa diakses melalui Smartphone.</li>
-                  </ul>
-                </p>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mt-5">
-              <div class="border border-slate-700 p-2 rounded-lg">
-                <img src="img/ritel/wm_pos_1.png" alt="" class="rounded-md">
-                <div class="text-center mt-2 text-sm">Form Login</div>
-              </div>
-              <div class="border border-slate-700 p-2 rounded-lg">
-                <img src="img/ritel/wm_pos_2.png" alt="" class="rounded-md">
-                <div class="text-center mt-2 text-sm">Dashboard</div>
-              </div>
-              <div class="border border-slate-700 p-2 rounded-lg">
-                <img src="img/ritel/wm_pos_3.png" alt="" class="rounded-md">
-                <div class="text-center mt-2 text-sm">Kasir Gudang</div>
-              </div>
-              <div class="border border-slate-700 p-2 rounded-lg">
-                <img src="img/ritel/wm_pos_4.png" alt="" class="rounded-md">
-                <div class="text-center mt-2 text-sm">Invoice</div>
-              </div>
-              <div class="border border-slate-700 p-2 rounded-lg">
-                <img src="img/ritel/wm_pos_5.png" alt="" class="rounded-md">
-                <div class="text-center mt-2 text-sm">Kasir Toko</div>
-              </div>
-              <div class="border border-slate-700 p-2 rounded-lg">
-                <img src="img/ritel/wm_pos_6.png" alt="" class="rounded-md">
-                <div class="text-center mt-2 text-sm">Halaman Belanja</div>
-              </div>
-              <div class="border border-slate-700 p-2 rounded-lg">
-                <img src="img/ritel/wm_pos_7.png" alt="" class="rounded-md">
-                <div class="text-center mt-2 text-sm">Laporan</div>
-              </div>
-            </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- modal order -->
-  <div data-te-modal-init class="fixed top-0 left-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none" id="order" tabindex="-1" aria-labelledby="orderLabel" aria-modal="true" role="dialog">
-    <div data-te-modal-dialog-ref class="pointer-events-none relative w-auto translate-y-[-50px] opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[992px]:max-w-[800px] min-[1200px]:max-w-[1140px]">
-      <div class="pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-slate-800 text-slate-300 shadow-lg outline-none">
-        <div class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-slate-700 p-4">
-          <h5 class="text-xl font-medium leading-normal text-white" id="orderLabel">Web Order</h5>
-          <button type="button" class="box-content rounded-none border-none text-white hover:text-emerald-400 focus:outline-none" data-te-modal-dismiss aria-label="Close">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
-          </button>
-        </div>
-        <div class="relative p-4">
-            <div>
-                <p class="indent-20 text-justify mb-5">
-                  Web Order bertujuan untuk memudahkan pelanggan dalam melakukan pemesanan produk atau jasa secara online.
-                </p>
-                <p>
-                  Beberap fitur web order:
-                  <ul class="list-disc ml-6 mt-2 space-y-1 [list-style-position:outside]">
-                    <li class="pl-2 text-justify">Sistem Keranjang yang memungkinkan pelanggan untuk memilih beberapa produk atau jasa.</li>
-                    <li class="pl-2 text-justify">Sistem Checkout yang mudah dan nyaman, termasuk metode pengiriman yang sudah integrasi dengan API rajaongkir.</li>
-                    <li class="pl-2 text-justify">Tracking pesanan agar pelanggan bisa melihat rincian proses pesanannya.</li>
-                    <li class="pl-2 text-justify">Laporan dan analisis yang memungkinkan pemilik website untuk memantau kinerja bisnis dan mengambil keputusan yang lebih baik.</li>
-                  </ul>
-                </p>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mt-5">
-              <div class="border border-slate-700 p-2 rounded-lg">
-                <img src="img/web_order/1.png" alt="" class="rounded-md">
-                <div class="text-center mt-2 text-sm">Form Login</div>
-              </div>
-              <div class="border border-slate-700 p-2 rounded-lg">
-                <img src="img/web_order/2.png" alt="" class="rounded-md">
-                <div class="text-center mt-2 text-sm">Dashboard</div>
-              </div>
-              <div class="border border-slate-700 p-2 rounded-lg">
-                <img src="img/web_order/3.png" alt="" class="rounded-md">
-                <div class="text-center mt-2 text-sm">Data SPK</div>
-              </div>
-              <div class="border border-slate-700 p-2 rounded-lg">
-                <img src="img/web_order/4.png" alt="" class="rounded-md">
-                <div class="text-center mt-2 text-sm">Update Status</div>
-              </div>
-              <div class="border border-slate-700 p-2 rounded-lg">
-                <img src="img/web_order/5.png" alt="" class="rounded-md">
-                <div class="text-center mt-2 text-sm">Input Data</div>
-              </div>
-              <div class="border border-slate-700 p-2 rounded-lg">
-                <img src="img/web_order/6.png" alt="" class="rounded-md">
-                <div class="text-center mt-2 text-sm">Laporan</div>
-              </div>
-              <div class="border border-slate-700 p-2 rounded-lg">
-                <img src="img/web_order/7.png" alt="" class="rounded-md">
-                <div class="text-center mt-2 text-sm">SPK Jadi</div>
-              </div>
-              <div class="border border-slate-700 p-2 rounded-lg">
-                <img src="img/web_order/8.png" alt="" class="rounded-md">
-                <div class="text-center mt-2 text-sm">SPK Jadi</div>
-              </div>
-              <div class="border border-slate-700 p-2 rounded-lg">
-                <img src="img/web_order/9.png" alt="" class="rounded-md">
-                <div class="text-center mt-2 text-sm">SPK Jadi</div>
-              </div>
-            </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- =========================================================
+    JAVASCRIPT
+  ========================================================== -->
   <script>
-    // Inisialisasi AOS (Animate On Scroll)
-    AOS.init({
-      duration: 700, // Durasi animasi dalam ms
-      once: true,     // Animasi hanya berjalan sekali
-      offset: 50,     // Trigger animasi 50px sebelum elemen terlihat
+    // Membuat ulang style badge agar mudah diubah dalam satu file.
+    document.querySelectorAll(".skill-badge").forEach((badge) => {
+      badge.className += " inline-flex items-center rounded-lg border border-blue-100 bg-blue-50 px-2.5 py-1 text-xs font-semibold text-blue-700 transition hover:border-blue-200 hover:bg-blue-100";
     });
+
+    // Menampilkan tahun otomatis pada footer.
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Membuka dialog print browser agar dapat disimpan sebagai PDF.
+    function downloadPDF() {
+      document.title = "CV-Andi-Pratama-Full-Stack-Developer";
+      window.print();
+    }
   </script>
 </body>
 </html>
